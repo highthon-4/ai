@@ -16,19 +16,19 @@ public class GPTController {
 
     //이상적인사람 - 방법론을 논한다
     @PostMapping("/ideal")
-    public Object ideal(@RequestBody Request request) throws JsonProcessingException {
+    public Object ideal(@RequestBody Request request) {
         return azureGPTApiRequest.sendRequest(request , 1);
     }
 
     //현실적인사람 - 부정적 & 노력에대한 비판
     @PostMapping("/realistic")
-    public Object realistic(@RequestBody Request request) throws JsonProcessingException {
+    public Object realistic(@RequestBody Request request) {
         return azureGPTApiRequest.sendRequest(request , 2);
     }
 
     //감각적인사람 - 긍정적
     @PostMapping("/sensuous")
-    public Object sensuous(@RequestBody Request request) throws JsonProcessingException {
+    public Object sensuous(@RequestBody Request request) {
         return azureGPTApiRequest.sendRequest(request , 3);
     }
 

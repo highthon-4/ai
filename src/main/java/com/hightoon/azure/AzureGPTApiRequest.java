@@ -1,6 +1,5 @@
 package com.hightoon.azure;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hightoon.dto.Request;
@@ -31,7 +30,7 @@ public class AzureGPTApiRequest {
 
     // 기존 코드 생략
 
-    public Object sendRequest(Request text, int n) throws JsonProcessingException {
+    public Object sendRequest(Request text, int n) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("api-key", subscriptionKey);
