@@ -92,7 +92,7 @@ public class AzureGPTApiRequest {
             //감각적인사람 - 긍정적
             userRequest = "{" +
                     "\"role\":\"user\"," +
-                    "\"content\":\"" + "너는 감각적인 사람으로서 사용자가 말하는 내용을 긍정적으로 받아드리고 답변을 해줘" + request.request() + "\\n  긍정적으로"+ "\"" +
+                    "\"content\":\"" + "너는 감각적인 사람으로서 사용자가 말하는 내용을 긍정적으로 받아드리고 답변을 해줘" + request.request() + "\\n  긍정적으로 답변을 길게해줘."+ "\"" +
                     "}";
         }
         return "{" +
