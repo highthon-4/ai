@@ -65,11 +65,11 @@ public class AzureGPTApiRequest {
             // appropriate error handling
         }
 
-//        Map<String, String> map = new HashMap<>();
-//        map.put("data",contentValue);
-//
-//        return map;
-        return contentValue;
+        Map<String, String> map = new HashMap<>();
+        map.put("data",contentValue);
+
+        return map;
+//        return contentValue;
     }
     public String makePrompt(Request request, int n){
         String userRequest = "";
