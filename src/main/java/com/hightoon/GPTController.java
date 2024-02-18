@@ -32,4 +32,10 @@ public class GPTController {
         return azureGPTApiRequest.sendRequest(request , 3);
     }
 
+    //대화 이어가기
+    @PostMapping("/continue")
+    public Object keep(@RequestBody Request request) {
+        return azureGPTApiRequest.sendRequest(request , 4);
+    }
+
 }

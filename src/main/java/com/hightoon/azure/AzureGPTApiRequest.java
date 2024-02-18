@@ -49,7 +49,7 @@ public class AzureGPTApiRequest {
             JsonNode jsonNode = objectMapper.readTree(responseBody);
             if (jsonNode.has("choices")) {
                 JsonNode choicesNode = jsonNode.get("choices");
-                if (choicesNode.isArray() && choicesNode.size() > 0) {
+                if (choicesNode.isArray() && !choicesNode.isEmpty()) {
                     JsonNode firstChoiceNode = choicesNode.get(0);
                     if (firstChoiceNode.has("message")) {
                         JsonNode messageNode = firstChoiceNode.get("message");
@@ -93,6 +93,11 @@ public class AzureGPTApiRequest {
                     "\"role\":\"user\"," +
                     "\"content\":\"" + "너는 감각적인 사람으로서 사용자가 말하는 내용을 긍정적으로 받아드리고 답변을 해줘" + request.request() + "\\n  긍정적으로 답변을 길게해줘."+ "\"" +
                     "}";
+            System.out.println("++++++++++++"+userRequest+"++++++++++++");
+        }
+        if (n==4) {
+            userRequest = request.request().replace("[", "").replace("]", "");
+            System.out.println(userRequest+"++++++++++++++++++++++++++++++++++++++++++++");
         }
         return "{" +
                 "\"messages\": [" +
@@ -102,7 +107,7 @@ public class AzureGPTApiRequest {
                 "}," +
                 userRequest +
                 "]," +
-                "\"max_tokens\": 2500," +
+                "\"max_tokens\": 4000," +
                 "\"temperature\": 0.3," +
                 "\"frequency_penalty\": 0," +
                 "\"presence_penalty\": 0," +
